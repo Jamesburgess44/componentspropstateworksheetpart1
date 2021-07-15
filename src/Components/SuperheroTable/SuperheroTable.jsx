@@ -20,7 +20,7 @@ const DisplaySuperheroTable = (props) => {
                                             <tr key={key.superheroId}>
                                             <td className="text-muted">{key.name}</td>
                                             <td>{key.primaryAbility}</td>
-                                            <td>{key.secondarAbility}</td>
+                                            <td>{key.secondaryAbility}</td>
                                     </tr>
                                 );
                             })

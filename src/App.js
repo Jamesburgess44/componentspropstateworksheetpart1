@@ -18,31 +18,31 @@ class App extends Component {
             superheroId: 1,
             name: 'Batman',
             primaryAbility: 'Wealthy',
-            secondarAbility: 'Rich'
+            secondaryAbility: 'Rich'
         },
         {
             superheroId: 2,
             name: 'Superman',
             primaryAbility: 'Super strength',
-            secondarAbility: 'Fly'
+            secondaryAbility: 'Fly'
         },
         {
             superheroId: 3,
             name: 'Spiderman',
             primaryAbility: 'Spider senses',
-            secondarAbility: 'Shoots web'
+            secondaryAbility: 'Shoots web'
         }
     ]
   }
   }
 
-  addNewSuperhero = (newSuperhero) => {
-    let tempSuperhero = this.state.superheroes;
-    tempSuperhero.push(newSuperhero);
+  addNewSuperhero(superhero){
+    let tempSuperhero = this.state.superheroes
+    tempSuperhero.push(superhero);
     this.setState({
-      superheros: tempSuperhero
+        superheroes: tempSuperhero
     })
-  }
+}
 
   render() {
     return (
@@ -50,7 +50,7 @@ class App extends Component {
         <DisplayNames firstName={this.state.firstName} lastName={this.state.lastName}/>
         <DisplayFirstNames firstNames={this.state.firstNames} />
         <AlertUser />
-        <AddSuperhero addSuperhero={this.addNewSuperhero}/>
+        <AddSuperhero addNewSuperhero={this.addNewSuperhero.bind(this)} superheroArray={this.state.superheroes}/>
         <DisplaySuperheroTable heroes={this.state.superheroes}/>
       </React.Fragment>
     );
